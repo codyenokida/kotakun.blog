@@ -1,113 +1,103 @@
-import Image from "next/image";
+import { BASED_LOCATION, CURRENT_LOCATION, RECOMMENDED_POSTS } from "./config";
+import HyperLink from "@/app/components/hyperlink";
+import PostCard from "@/app/components/post-card";
+import Divider from "@/app/components/divider";
+import BlogPosts from "@/app/components/posts";
 
-export default function Home() {
+const ArrowSVG = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <svg
+      width="58"
+      height="76"
+      viewBox="0 0 58 76"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.98626 2.12742C9.47855 3.09307 14.7914 10.9083 15.8737 12.5535C18.6438 16.7643 20.8502 23.9045 21.719 30.0836M21.719 30.0836C22.0411 32.3744 22.1794 34.5331 22.0943 36.3615C21.4064 51.15 3.66151 51.8568 2.03742 38.8697C1.4039 33.8037 8.12327 30.2265 12.2317 29.4916C15.3996 28.925 18.6401 29.2096 21.719 30.0836ZM21.719 30.0836C24.7109 30.9328 27.5502 32.3385 30.0223 34.0605C40.2663 41.1959 48.2073 60.0598 46.4031 72.4359M32.2816 62.5996C36.0204 65.2039 42.3621 72.3899 46.1879 73.7008C46.4456 73.7891 54.7244 60.4895 56.2395 58.3144"
+        stroke="#4F8F4A"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
+const SmileSVG = () => {
+  return (
+    <svg
+      width="13"
+      height="9"
+      viewBox="0 0 13 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.86755 6.10742C5.44356 7.55209 7.93946 8.77221 9.81696 7.13469C10.4462 6.58591 10.641 5.86708 10.641 5.06915M1 3.38815V3.83312M11.7287 1.95436C11.7287 1.85034 11.6793 1.76174 11.6793 1.65771"
+        stroke="#4F8F4A"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
+export default function Page() {
+  return (
+    <section className="m-auto min-h-screen">
+      <div className="flex flex-col gap-3">
+        <h1>
+          welcome to <strong>kotakun.blog</strong>
+        </h1>
+        <p>
+          hey, i&apos;m <HyperLink href="/about">kota (cody) enokida</HyperLink>
+          . this is a blog where i ramble about the many thoughts that go
+          through my brain. discourse, an open mind, and a bit of stupidity is
+          embraced here.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+        <p>
+          i&apos;m based in <span className="font-bold">{BASED_LOCATION}</span>,
+          but i&apos;m currently in{" "}
+          <span className="font-bold">{CURRENT_LOCATION}</span>. i update my{" "}
+          <HyperLink href="/now">now</HyperLink> page every so often!
+        </p>
+        <p>
+          i do web dev for work. if you&apos;re interested in that side of me,
+          here&apos;s{" "}
+          <HyperLink href="/projects">all the stuff i&apos;ve made</HyperLink>.
+        </p>
+        <p>
+          welcome, and thank you for visiting to my corner of the{" "}
+          <span className="relative">
+            internet!
+            <i className="absolute right-[-16px] top-0">
+              <SmileSVG />
+            </i>
+          </span>
+        </p>
+      </div>
+      <div className="px-2 py-6">
+        <ArrowSVG />
+      </div>
+      <h2>i recommend reading...</h2>
+      <div className="grid grid-cols-1 gap-4 pt-4">
+        {RECOMMENDED_POSTS.map((post, i) => {
+          return (
+            <PostCard
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              id={post.slug}
+              title={post.title}
+              description={post.summary}
+              thumbnailUrl={post.thumbnail}
+              latest={i === 0}
             />
-          </a>
-        </div>
+          );
+        })}
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Divider />
+      <h2>everything else i&apos;ve written so far</h2>
+      <BlogPosts />
+    </section>
   );
 }

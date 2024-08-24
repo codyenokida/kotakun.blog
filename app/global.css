@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-display: "Satoshi", "sans-serif";
+  --foreground-rgb: rgba(0, 0, 0);
+  --color-white: rgba(255, 252, 250);
+  --color-green: rgba(79, 143, 73);
+  --color-green-faded: rgba(79, 143, 73, 0.2);
+  --color-green-faded-xl: rgba(79, 143, 73, 0.05);
+  --color-off-white: rgba(79, 143, 73, 0.02);
+  --color-gray: rgba(113, 113, 113);
+  --color-red: rgba(255, 60, 60);
+}
+
+::selection {
+  background-color: #47a3f3;
+  color: #ffffff;
+}
+
+:root {
+  --sh-class: #2d5e9d;
+  --sh-identifier: #354150;
+  --sh-sign: #8996a3;
+  --sh-string: #007f7a;
+  --sh-keyword: #e02518;
+  --sh-comment: #a19595;
+  --sh-jsxliterals: #6266d1;
+  --sh-property: #e25a1c;
+  --sh-entity: #e25a1c;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --sh-class: #4c97f8;
+    --sh-identifier: white;
+    --sh-keyword: #f47067;
+    --sh-string: #0fa295;
+  }
+  html {
+    color-scheme: dark;
+  }
+} */
+
+html {
+  min-width: 360px;
+  font-family: var(--font-inria-sans);
+  @apply text-neutral-800;
+}
+
+.leaflet-div-icon {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-patrick-hand-sc);
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.25rem;
+}
+
+a,
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.5rem;
+}
+
+a.hyperlink {
+  color: var(--color-green);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding-bottom: 4px;
+}
+
+a.hyperlink:hover {
+  padding-bottom: 4px;
+  background: url("../public/wave.svg");
+  background-repeat: repeat;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto auto;
+  background-repeat: repeat-x;
+  background-size: 10px;
+  background-position: 2px 19px;
+  animation: move 20s linear infinite;
+  -webkit-animation: move 20s linear infinite;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  animation-play-state: running;
+}
+
+a.back-button {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: var(--font-patrick-hand-sc);
+}
+
+a.back-button svg {
+  @apply mt-2;
+}
+
+a.back-button:hover svg {
+  animation: wiggle 0.25s ease-in-out infinite alternate;
+}
+
+.prose img,
+.summary img {
+  @apply m-0;
+}
+
+.prose .image-formatter {
+  @apply my-4;
+}
+
+.prose p,
+.summary p {
+  @apply my-4 text-neutral-800;
+}
+
+.prose h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h2 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h3 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h4 {
+  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+.prose ul,
+.summary ul {
+  @apply list-disc pl-6;
+}
+
+.prose ol,
+.summary ol {
+  @apply list-decimal pl-6;
+}
+
+.prose > :first-child {
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+/* .prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: "#";
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg;
+}
+
+.prose pre code {
+  @apply p-0;
+  border: initial;
+  line-height: 1.5;
+}
+
+.prose code span {
+  @apply font-medium;
+}
+   */
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Remove Safari input shadow on mobile */
+input[type="text"],
+input[type="email"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.title {
+  text-wrap: balance;
+}
+
+@keyframes move {
+  from {
+    background-position: 2px 19px;
+  }
+  to {
+    background-position: 500px 19px;
+  }
+}
+
+@keyframes wiggle {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(7deg);
+  }
+}
