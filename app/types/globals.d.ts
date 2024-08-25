@@ -35,6 +35,18 @@ declare global {
   type OrderedPosts = {
     [year: number]: PostData[];
   };
+
+  type BlogComment = {
+    author: string;
+    content: string;
+    datePosted: Date;
+  };
+
+  type BlogCommentFromFirestore = {
+    author: string;
+    content: string;
+    datePosted: FirebaseFirestoreTypes.Timestamp;
+  };
 }
 
 export {};

@@ -59,34 +59,29 @@ h4 {
   font-family: var(--font-patrick-hand-sc);
 }
 
+button {
+  font-family: inherit;
+}
+
 h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 2.25rem;
-  margin-bottom: 1rem;
+  @apply text-neutral-800 text-4xl font-bold tracking-tight mb-4 leading-10;
+}
+
+h1 strong {
+  @apply text-green text-5xl;
 }
 
 h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 1.75rem;
+  @apply text-neutral-800 text-3xl font-bold tracking-tight mb-2 leading-7;
 }
 
 h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 1.25rem;
+  @apply text-neutral-800 text-2xl font-bold tracking-tight mb-2 leading-6;
 }
 
 a,
 p {
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  line-height: 1.5rem;
+  @apply text-neutral-800 text-base font-normal leading-6;
 }
 
 a.hyperlink {
@@ -94,19 +89,19 @@ a.hyperlink {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 4px;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 a.hyperlink:hover {
-  padding-bottom: 4px;
+  padding-bottom: 6px;
   background: url("../public/wave.svg");
   background-repeat: repeat;
   background-position-x: 0%;
   background-position-y: 0%;
   background-size: auto auto;
   background-repeat: repeat-x;
-  background-size: 10px;
-  background-position: 2px 19px;
+  background-size: 6px;
+  background-position: 4px 2px;
   animation: move 20s linear infinite;
   -webkit-animation: move 20s linear infinite;
   text-decoration: none;
@@ -143,20 +138,21 @@ a.back-button:hover svg {
   @apply my-4 text-neutral-800;
 }
 
-.prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+.prose h1,
+.summary h1 {
+  @apply text-4xl font-bold tracking-tight mt-6 mb-2;
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-bold tracking-tight mt-6 mb-2;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-bold tracking-tight mt-6 mb-2;
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply text-lg font-bold tracking-tight mt-6 mb-2;
 }
 
 .prose strong {

@@ -17,17 +17,17 @@ export default function Page() {
       <h1 className="title font-semibold text-2xl tracking-tighter mb-8">
         what i&apos;m up to now
       </h1>
+      <p>
+        <i>
+          * this page is all about what i&apos;m doing now. it&apos;s inspired
+          by{" "}
+          <HyperLink href="https://nownownow.com/about">
+            nownownow.com
+          </HyperLink>
+          .
+        </i>
+      </p>
       <div className="mt-8">
-        <p>
-          <i>
-            * this page is all about what i&apos;m doing now. it&apos;s inspired
-            by{" "}
-            <HyperLink href="https://nownownow.com/about">
-              nownownow.com
-            </HyperLink>
-            .
-          </i>
-        </p>
         <NowMap lat={LAT} lon={LON} />
         <h2 className="mt-8">2024, july</h2>
         <p>

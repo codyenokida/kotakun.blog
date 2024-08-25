@@ -4,6 +4,8 @@ import { CustomMDX } from "@/app/components/mdx";
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import { baseUrl } from "../../sitemap";
 import BackButton from "@/app/components/back-button";
+import Comments from "@/app/components/comments";
+import Divider from "@/app/components/divider";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -96,6 +98,8 @@ export default function Blog({ params }: { params: { slug: string } }) {
       <article className="prose flex flex-col">
         <CustomMDX source={post.content} />
       </article>
+      <Divider />
+      <Comments slug={params.slug} />
     </section>
   );
 }

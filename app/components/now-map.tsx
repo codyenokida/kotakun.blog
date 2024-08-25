@@ -15,7 +15,7 @@ type Props = {
 const iconPerson = new L.Icon({
   iconUrl: "/marker.svg",
   iconRetinaUrl: "/marker.svg",
-  iconSize: new L.Point(40, 40),
+  iconSize: new L.Point(50, 50),
   className: "leaflet-div-icon",
   iconAnchor: new L.Point(20, 40),
   popupAnchor: new L.Point(0, -40),

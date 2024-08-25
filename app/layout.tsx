@@ -73,11 +73,11 @@ export default function RootLayout({
     >
       <body className="antialiased max-w-xl mx-4 mt-8 mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-6 md:px-0">
-          <div className="flex items-center justify-center mb-6 w-[70px] h-[70px] mx-auto">
+          <div className="flex items-center justify-center w-[84px] h-[84px] mx-auto">
             <Image
               src="/logo.webp"
-              width={70}
-              height={70}
+              width={84}
+              height={84}
               alt="logo emoji"
               unoptimized
             />

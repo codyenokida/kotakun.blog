@@ -264,7 +264,7 @@ export default function Page() {
       <h1 className="title font-semibold text-2xl tracking-tighter mb-8">
         a little about me
       </h1>
-      <div className="mt-10">
+      <div className="mt-10 ">
         <AboutImages
           imageUrls={[
             "/about/me-1.png",
