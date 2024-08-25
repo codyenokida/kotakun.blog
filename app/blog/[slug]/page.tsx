@@ -1,11 +1,15 @@
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 
 import { CustomMDX } from "@/app/components/mdx";
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import { baseUrl } from "../../sitemap";
 import BackButton from "@/app/components/back-button";
-import Comments from "@/app/components/comments";
 import Divider from "@/app/components/divider";
+
+const Comments = dynamic(() => import("@/app/components/comments"), {
+  ssr: false,
+});
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
