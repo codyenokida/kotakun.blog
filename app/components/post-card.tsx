@@ -40,7 +40,7 @@ export default function PostCard({
 }: PostCardProps) {
   return (
     <Link href={href}>
-      <div className="hover:bg-green-faded-xl group flex flex-col gap-3 rounded-md border-2 border-neutral-100 bg-off-white p-2 hover:border-green md:flex-row">
+      <div className="hover:bg-green-faded-xl group flex flex-col gap-3 rounded-md border-2 border-green-faded bg-off-white p-2 hover:border-green md:flex-row">
         <div className="relative h-[200px] w-full overflow-hidden rounded-md md:h-[160px] md:w-[240px]">
           <DynamicBlurImage
             src={thumbnailUrl}

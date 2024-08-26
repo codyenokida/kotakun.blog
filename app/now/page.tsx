@@ -12,9 +12,9 @@ export default function Page() {
   });
 
   return (
-    <section className="summary">
+    <section>
       <BackButton />
-      <h1 className="title font-semibold text-2xl tracking-tighter mb-8">
+      <h1 className="title font-semibold text-4xl tracking-tighter">
         what i&apos;m up to now
       </h1>
       <p>
@@ -27,9 +27,9 @@ export default function Page() {
           .
         </i>
       </p>
-      <div className="mt-8">
+      <div className="prose mt-8">
         <NowMap lat={LAT} lon={LON} />
-        <h2 className="mt-8">2024, july</h2>
+        <h2 className="mt-8">2024, JULY</h2>
         <p>
           <b>Location:</b> {CURRENT_LOCATION}
         </p>

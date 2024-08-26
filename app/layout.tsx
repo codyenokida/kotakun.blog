@@ -71,8 +71,8 @@ export default function RootLayout({
         inriaSans.variable
       )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-6 md:px-0">
+      <body className="antialiased max-w-xl mt-6 mx-auto">
+        <main className="flex-auto min-w-0 flex flex-col px-6 md:px-0">
           <div className="flex items-center justify-center w-[84px] h-[84px] mx-auto">
             <Image
               src="/logo.webp"
