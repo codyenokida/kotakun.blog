@@ -19,7 +19,7 @@ export default function HeroImage({ src, alt, caption }: HeroImageProps) {
         height={800}
         className="rounded-md border-2 border-green-faded w-full h-[240px] md:h-[400px] object-cover"
       />
-      <figcaption className="w-3/4 m-auto text-gray-600 italic text-center">
+      <figcaption className="w-3/4 m-auto text-gray italic text-center">
         {caption}
       </figcaption>
     </div>

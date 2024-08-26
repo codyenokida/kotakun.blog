@@ -276,7 +276,7 @@ export default function Page() {
           hey, i&apos;m <strong>kota enokida</strong>! my friends call me{" "}
           <strong>cody</strong> or{" "}
           <HyperLink href="https://en.wikipedia.org/wiki/Japanese_honorifics#:~:text=Kun%20(%E5%90%9B%E3%80%90%E3%81%8F%E3%82%93%E3%80%91)%20%2Fk%CA%8An%2F,teenagers%2C%20or%20among%20male%20friends.">
-            <strong>kota-kun (君)</strong>
+            kota-kun (君)
           </HyperLink>
           .
         </p>

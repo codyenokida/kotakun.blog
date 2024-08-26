@@ -80,7 +80,7 @@ h3 {
 
 a,
 p {
-  @apply text-neutral-800 text-base font-normal leading-6;
+  @apply text-neutral-800 text-base font-normal leading-6 tracking-wide;
 }
 
 a.hyperlink {
@@ -152,7 +152,7 @@ a.back-button:hover svg {
 }
 
 .prose strong {
-  @apply font-medium;
+  @apply font-bold;
 }
 
 .prose ul,

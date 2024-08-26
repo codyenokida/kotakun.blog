@@ -47,7 +47,7 @@ export default function Page() {
     <section className="m-auto min-h-screen">
       <div className="flex flex-col gap-3">
         <h1>
-          this is <strong className="text-green">kotakun.blog</strong>
+          this is <strong className="text-green leading-4">kotakun.blog</strong>
         </h1>
         <p>
           hey, i&apos;m <HyperLink href="/about">kota (cody) enokida</HyperLink>

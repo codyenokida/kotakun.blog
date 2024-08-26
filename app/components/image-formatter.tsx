@@ -40,7 +40,7 @@ export default function ImageFormatter({
                 : "w-full h-[280px] md:w-[360px] lg:w-[400px]"
             }`}
           />
-          <figcaption className="w-[90%] mx-auto text-gray-600 text-center italic">
+          <figcaption className="w-[90%] mx-auto text-gray text-center italic">
             {imageSource.caption}
           </figcaption>
         </div>
