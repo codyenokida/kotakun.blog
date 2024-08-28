@@ -6,8 +6,14 @@ type HyperLinkProps = {
 };
 
 export default function HyperLink({ href, children }: HyperLinkProps) {
+  const isExternalLink = !href.startsWith("/");
+
   return (
-    <Link href={href} className="hyperlink">
+    <Link
+      href={href}
+      className="hyperlink leading-4"
+      {...(isExternalLink && { target: "_blank", rel: "noopener noreferrer" })}
+    >
       {children}
     </Link>
   );

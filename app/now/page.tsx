@@ -3,6 +3,12 @@ import HyperLink from "@/app/components/hyperlink";
 import { CURRENT_LOCATION, LAT, LON } from "@/app/config";
 import dynamic from "next/dynamic";
 
+export const metadata = {
+  title: "what i'm up to now",
+  description:
+    "This is a now page inspired by nownownow.com, that shows what i'm up to now.",
+};
+
 export default function Page() {
   const NowMap = dynamic(() => import("@/app/components/now-map"), {
     loading: () => (

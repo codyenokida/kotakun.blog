@@ -52,7 +52,7 @@ export default function PostCard({
         </div>
         <div className="relative flex flex-1 flex-col justify-between">
           <div className="flex flex-col gap-2">
-            <h3 className="relative">
+            <h3 className="relative mb-0">
               <strong>{title} </strong>
               {latest && <span className="text-red text-[14px]">(NEW)</span>}
             </h3>

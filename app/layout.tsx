@@ -6,7 +6,7 @@ import { GeistMono } from "geist/font/mono";
 import { Inria_Sans, Patrick_Hand_SC } from "next/font/google";
 import Image from "next/image";
 
-// import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/react";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { baseUrl } from "./sitemap";
@@ -38,6 +38,14 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/favicon/apple-touch-icon.png" }],
   },
 };
 
@@ -84,7 +92,7 @@ export default function RootLayout({
           </div>
           {children}
           <Footer />
-          {/* <Analytics /> */}
+          <Analytics />
           {/* <SpeedInsights /> */}
         </main>
       </body>

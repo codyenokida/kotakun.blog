@@ -24,8 +24,8 @@ export default function ImageFormatter({
         <div
           className={`flex flex-col justify-center items-center ${
             isPortrait(imageSource)
-              ? "w-full md:w-[280px] lg:w-[320px]"
-              : "w-full md:w-[360px] lg:w-[400px]"
+              ? "w-full md:w-[280px] lg:w-[400px]"
+              : "w-full md:w-[360px] lg:w-[480px]"
           }`}
           key={imageSource.alt}
         >
@@ -34,10 +34,10 @@ export default function ImageFormatter({
             alt={imageSource.alt}
             width={1200}
             height={1200}
-            className={`w-full lg:w-[320px] object-cover border-2 border-green-faded rounded-sm ${
+            className={`w-full lg:w-[320px] object-cover border-2 border-green-faded bg-green-faded rounded-md shadow-sm ${
               isPortrait(imageSource)
-                ? "w-full h-[420px] md:w-[280px] md:h-[440px] lg:w-[320px] lg:h-[460px]"
-                : "w-full h-[280px] md:w-[360px] lg:w-[400px]"
+                ? "w-full h-[480px] md:w-[280px] md:h-[440px] lg:w-[400px] lg:h-[540px]"
+                : "w-full h-[280px] md:w-[360px] lg:w-[480px] lg:h-[320px]"
             }`}
           />
           <figcaption className="w-[90%] mx-auto text-gray text-center italic">

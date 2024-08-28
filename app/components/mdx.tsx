@@ -7,6 +7,7 @@ import HeroImage from "./hero-image";
 import BlockQuote from "./blockquote";
 import ImageFormatter from "./image-formatter";
 import HyperLink from "./hyperlink";
+import VideoPlayer from "./video-player";
 
 function Table({ data }: { data: any }) {
   let headers = data.headers.map((header: any, index: number) => (
@@ -104,6 +105,7 @@ let components = {
   HeroImage,
   BlockQuote,
   ImageFormatter,
+  VideoPlayer,
 };
 
 export function CustomMDX(props: any) {

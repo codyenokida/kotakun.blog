@@ -4,8 +4,9 @@ import HyperLink from "@/app/components/hyperlink";
 import { BASED_LOCATION } from "@/app/config";
 
 export const metadata = {
-  title: "Blog",
-  description: "Read my blog.",
+  title: "a little about me",
+  description:
+    "Yeah this is an about page that explains a little bit about kota cody enokida and who i am.",
 };
 
 const SignatureSVG = () => {
@@ -301,11 +302,9 @@ export default function Page() {
         </p>
         <p>
           i currently work as a{" "}
-          <HyperLink href="https://www.linkedin.com/in/kota-enokida/">
-            software engineer on the web
-          </HyperLink>
-          . i enjoy the openness of the internet and i&apos;m spending my time
-          to make it more accessible and enjoyable to use for everyone.
+          <HyperLink href="/projects">web engineer</HyperLink>. i enjoy the
+          openness of the internet and i&apos;m spending my time to make it more
+          accessible and enjoyable to use for everyone.
         </p>
         <p>
           at the end of the day, much like my childhood days spent with legos
