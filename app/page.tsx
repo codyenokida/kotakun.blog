@@ -1,8 +1,9 @@
-import { BASED_LOCATION, CURRENT_LOCATION, RECOMMENDED_POSTS } from "./config";
 import HyperLink from "@/app/components/hyperlink";
 import PostCard from "@/app/components/post-card";
 import Divider from "@/app/components/divider";
 import BlogPosts from "@/app/components/posts";
+import { BASED_LOCATION, CURRENT_LOCATION } from "@/app/now/now";
+import { RECOMMENDED_POSTS } from "@/app/config";
 
 const ArrowSVG = () => {
   return (
@@ -67,7 +68,7 @@ export default function Page() {
           <HyperLink href="/projects">all the stuff i&apos;ve made</HyperLink>.
         </p>
         <p>
-          welcome, and thank you for visiting to my corner of the{" "}
+          welcome, and thank you for visiting my corner of the{" "}
           <span className="relative">
             internet!
             <i className="absolute right-[-16px] top-0">

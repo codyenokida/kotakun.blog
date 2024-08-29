@@ -1,7 +1,5 @@
-import AboutImages from "@/app/components/about-images";
 import BackButton from "@/app/components/back-button";
 import HyperLink from "@/app/components/hyperlink";
-import { BASED_LOCATION } from "@/app/config";
 
 export const metadata = {
   title: "Blog",
