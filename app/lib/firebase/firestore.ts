@@ -3,10 +3,6 @@
  */
 // import emailjs from "@emailjs/browser";
 import {
-  getDocs,
-  collection,
-  query,
-  where,
   doc,
   updateDoc,
   arrayUnion,
@@ -18,7 +14,7 @@ import {
 import { db } from "./firebase";
 
 /**
- * Function to post a comment given and ID, author, and content
+ * Function to post a comment given an ID, author, and content
  *
  * @param {string} id
  * @param {string} author
@@ -37,14 +33,30 @@ export async function postComment(id: string, author: string, content: string) {
   const postRef = doc(db, "comments", id);
   const datePosted = new Date();
 
-  // Atomically add a new comment to the "comments" array field.
-  await updateDoc(postRef, {
-    comments: arrayUnion({
-      author,
-      content,
-      datePosted,
-    }),
-  });
+  // Check if the document exists
+  const docSnap = await getDoc(postRef);
+
+  if (docSnap.exists()) {
+    // If the document exists, update it
+    await updateDoc(postRef, {
+      comments: arrayUnion({
+        author,
+        content,
+        datePosted,
+      }),
+    });
+  } else {
+    // If the document doesn't exist, create it
+    await setDoc(postRef, {
+      comments: [
+        {
+          author,
+          content,
+          datePosted,
+        },
+      ],
+    });
+  }
 }
 
 export async function addToEmaiList(name: string, email: string) {
