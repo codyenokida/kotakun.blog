@@ -6,6 +6,7 @@ import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import { baseUrl } from "../../sitemap";
 import BackButton from "@/app/components/back-button";
 import Divider from "@/app/components/divider";
+import { PostNavigation } from "@/app/components/post-navigation";
 
 const Comments = dynamic(() => import("@/app/components/comments"), {
   ssr: false,
@@ -104,6 +105,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
       </article>
       <Divider />
       <Comments slug={params.slug} />
+      <PostNavigation currentSlug={params.slug} />
     </section>
   );
 }
