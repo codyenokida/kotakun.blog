@@ -11,7 +11,7 @@ interface VideoPlayerProps {
 const VideoPlayer = ({
   src,
   caption,
-  autoplay = false,
+  autoplay = true,
   loop = false,
   isVertical = false,
 }: VideoPlayerProps) => {
@@ -27,6 +27,9 @@ const VideoPlayer = ({
           controls
           autoPlay={autoplay}
           loop={loop}
+          playsInline
+          muted
+          controlsList="nodownload nofullscreen noremoteplayback"
           className="w-full rounded-md shadow-lg"
         >
           Your browser does not support the video tag.

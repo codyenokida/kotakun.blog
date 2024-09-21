@@ -7,7 +7,6 @@ import { Inria_Sans, Patrick_Hand_SC } from "next/font/google";
 import Image from "next/image";
 
 import { Analytics } from "@vercel/analytics/react";
-// import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { baseUrl } from "./sitemap";
 
@@ -81,19 +80,9 @@ export default function RootLayout({
     >
       <body className="antialiased max-w-xl mt-6 mx-auto">
         <main className="flex-auto min-w-0 flex flex-col px-6 md:px-0">
-          <div className="flex items-center justify-center w-[84px] h-[84px] mx-auto">
-            <Image
-              src="/logo.webp"
-              width={84}
-              height={84}
-              alt="logo emoji"
-              unoptimized
-            />
-          </div>
           {children}
           <Footer />
           <Analytics />
-          {/* <SpeedInsights /> */}
         </main>
       </body>
     </html>

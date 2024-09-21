@@ -47,6 +47,17 @@ declare global {
     content: string;
     datePosted: FirebaseFirestoreTypes.Timestamp;
   };
+
+  type Project = {
+    name: string;
+    description: string;
+    url: string;
+    image: string;
+    thumbnail: string;
+    tags: string[];
+    logo: string;
+    github?: string;
+  };
 }
 
 export {};

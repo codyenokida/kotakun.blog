@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HyperLink from "@/app/components/hyperlink";
 import PostCard from "@/app/components/post-card";
 import Divider from "@/app/components/divider";
@@ -45,60 +46,75 @@ const SmileSVG = () => {
 
 export default function Page() {
   return (
-    <section className="m-auto min-h-screen">
-      <div className="flex flex-col gap-3">
-        <h1>
-          this is <strong className="text-green leading-4">kotakun.blog</strong>
-        </h1>
-        <p>
-          hey, i&apos;m <HyperLink href="/about">kota (cody) enokida</HyperLink>
-          . this is a blog where i ramble about the many thoughts that go
-          through my brain. discourse, an open mind, and a bit of stupidity is
-          embraced here.
-        </p>
-        <p>
-          i&apos;m based in <span className="font-bold">{BASED_LOCATION}</span>,
-          but i&apos;m currently in{" "}
-          <span className="font-bold">{CURRENT_LOCATION}</span>. i update my{" "}
-          <HyperLink href="/now">now</HyperLink> page every so often!
-        </p>
-        <p>
-          i do web dev for work. if you&apos;re interested in that side of me,
-          here&apos;s{" "}
-          <HyperLink href="/projects">all the stuff i&apos;ve made</HyperLink>.
-        </p>
-        <p>
-          welcome, and thank you for visiting my corner of the{" "}
-          <span className="relative">
-            internet!
-            <i className="absolute right-[-16px] top-0">
-              <SmileSVG />
-            </i>
-          </span>
-        </p>
+    <>
+      <div className="flex items-center justify-center w-[84px] h-[84px] mx-auto">
+        <Image
+          src="/logo.webp"
+          width={84}
+          height={84}
+          alt="logo emoji"
+          unoptimized
+        />
       </div>
-      <div className="px-2 py-6">
-        <ArrowSVG />
-      </div>
-      <h2>i recommend reading...</h2>
-      <div className="grid grid-cols-1 gap-4 pt-4">
-        {RECOMMENDED_POSTS.map((post, i) => {
-          return (
-            <PostCard
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              id={post.slug}
-              title={post.title}
-              description={post.summary}
-              thumbnailUrl={post.thumbnail}
-              latest={i === 0}
-            />
-          );
-        })}
-      </div>
-      <Divider />
-      <h2>everything else i&apos;ve written so far</h2>
-      <BlogPosts />
-    </section>
+      <section className="m-auto min-h-screen">
+        <div className="flex flex-col gap-3">
+          <h1>
+            this is{" "}
+            <strong className="text-green leading-4">kotakun.blog</strong>
+          </h1>
+          <p>
+            hey, i&apos;m{" "}
+            <HyperLink href="/about">kota (cody) enokida</HyperLink>. this is a
+            blog where i ramble about the many thoughts that go through my
+            brain. discourse, an open mind, and a bit of stupidity is embraced
+            here.
+          </p>
+          <p>
+            i&apos;m based in{" "}
+            <span className="font-bold">{BASED_LOCATION}</span>, but i&apos;m
+            currently in <span className="font-bold">{CURRENT_LOCATION}</span>.
+            i update my <HyperLink href="/now">now</HyperLink> page every so
+            often!
+          </p>
+          <p>
+            i do web dev for work. if you&apos;re interested in that side of me,
+            here&apos;s{" "}
+            <HyperLink href="/projects">all the stuff i&apos;ve made</HyperLink>
+            .
+          </p>
+          <p>
+            welcome, and thank you for visiting my corner of the{" "}
+            <span className="relative">
+              internet!
+              <i className="absolute right-[-16px] top-0">
+                <SmileSVG />
+              </i>
+            </span>
+          </p>
+        </div>
+        <div className="px-2 py-6">
+          <ArrowSVG />
+        </div>
+        <h2>i recommend reading...</h2>
+        <div className="grid grid-cols-1 gap-4 pt-4">
+          {RECOMMENDED_POSTS.map((post, i) => {
+            return (
+              <PostCard
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                id={post.slug}
+                title={post.title}
+                description={post.summary}
+                thumbnailUrl={post.thumbnail}
+                latest={i === 0}
+              />
+            );
+          })}
+        </div>
+        <Divider />
+        <h2>everything else i&apos;ve written so far</h2>
+        <BlogPosts />
+      </section>
+    </>
   );
 }
