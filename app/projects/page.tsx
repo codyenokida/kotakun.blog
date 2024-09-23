@@ -47,14 +47,16 @@ export default function Page() {
       </h1>
       <div className="flex flex-col gap-4">
         <p>
-          I&apos;m a <strong>web engineer</strong> mostly working with{" "}
-          <span className="text-bold inline-flex items-center gap-1">
-            <strong>React</strong> <ReactSvgIcon />
-          </span>
-          . I have a bachelor&apos;s degree in <strong>Computer Science</strong>{" "}
-          from the{" "}
+          I&apos;m{" "}
+          <Hyperlink href="/about">
+            <strong>Kota (Cody) Enokida</strong>
+          </Hyperlink>
+          , a <strong>web engineer</strong> working on building fun things on
+          the internet. I have a bachelor&apos;s degree in{" "}
+          <strong>Computer Science</strong> from the{" "}
+          <strong>University of California</strong>{" "}
           <span className="text-bold inline-flex items-center">
-            <strong>University of California, Irvine</strong>{" "}
+            <strong>, Irvine</strong>
             <Image
               src="/petr.png"
               alt="UCI petr sticker"
@@ -62,10 +64,11 @@ export default function Page() {
               height={24}
             />
           </span>
-          .
+          . I have a strong background in building frontend interfaces with{" "}
+          <strong>React</strong> and <strong>TypeScript</strong>.
         </p>
         <p>
-          Most recently, I created web-based software at{" "}
+          Most recently, I was developing web-based software at{" "}
           <Hyperlink href="https://c3.ai/">C3.ai</Hyperlink>, improving the
           design system, data visualization, and components library. We built
           the{" "}

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 import { CustomMDX } from "@/app/components/mdx";
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
@@ -91,6 +92,16 @@ export default function Blog({ params }: { params: { slug: string } }) {
           }),
         }}
       />
+      <div className="flex items-center justify-center w-[84px] h-[84px] mx-auto">
+        <Image
+          src={post.metadata.logo || "/logos/logo.gif"}
+          width={84}
+          height={84}
+          alt="logo emoji"
+          unoptimized
+          priority
+        />
+      </div>
       <BackButton />
       <h1 className="title font-semibold text-4xl tracking-tight">
         {post.metadata.title}

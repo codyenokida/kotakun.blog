@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="pb-6">
       <Divider />
       <div className="flex flex-col items-center justify-center gap-4">
-        <Image src="/logo.svg" width={40} height={34} alt="logo emoji" />
+        <Image src="/logos/logo.svg" width={40} height={34} alt="logo emoji" />
         <nav className="flex flex-col gap-4">
           <div className="flex gap-4 items-center justify-center">
             <HyperLink href="/">home</HyperLink>

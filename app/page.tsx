@@ -49,11 +49,12 @@ export default function Page() {
     <>
       <div className="flex items-center justify-center w-[84px] h-[84px] mx-auto">
         <Image
-          src="/logo.webp"
+          src="/logos/logo.gif"
           width={84}
           height={84}
           alt="logo emoji"
           unoptimized
+          priority
         />
       </div>
       <section className="m-auto min-h-screen">

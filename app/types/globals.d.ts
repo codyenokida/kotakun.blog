@@ -5,6 +5,7 @@ declare global {
     summary: string;
     image?: string;
     thumbnail: string;
+    logo?: string;
   };
 
   type PostPreviewMetadata = {

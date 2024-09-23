@@ -9,7 +9,7 @@ export default function BlockQuote({
 }: BlockQuoteProps) {
   return (
     <div
-      className={`relative grid grid-cols-[8px_1fr] rounded-md gap-3 bg-green-faded pr-3 ${
+      className={`relative h-fit grid grid-cols-[8px_1fr] rounded-md gap-3 bg-green-faded pr-3 ${
         type === "neutral" ? "text-neutral-800" : "text-red-500"
       }`}
     >
