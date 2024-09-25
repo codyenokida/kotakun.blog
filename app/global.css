@@ -131,7 +131,7 @@ a.back-button:hover svg {
   @apply my-4;
 }
 
-.prose p {
+.prose > p {
   @apply my-4 text-neutral-800;
 }
 
