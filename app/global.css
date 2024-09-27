@@ -136,19 +136,19 @@ a.back-button:hover svg {
 }
 
 .prose h1 {
-  @apply text-4xl font-bold mt-6 mb-2;
+  @apply text-4xl font-bold mt-6 mb-4;
 }
 
 .prose h2 {
-  @apply text-3xl font-bold mt-6 mb-6;
+  @apply text-3xl font-bold mt-6 mb-4;
 }
 
 .prose h3 {
-  @apply text-2xl font-bold mt-6 mb-6;
+  @apply text-2xl font-bold mt-6 mb-4;
 }
 
 .prose h4 {
-  @apply text-xl font-bold mt-6 mb-2;
+  @apply text-xl font-bold mt-6 mb-4;
 }
 
 .prose strong {
@@ -168,6 +168,10 @@ a.back-button:hover svg {
 .prose > :first-child {
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
+}
+
+.prose .blockquote {
+  @apply my-4;
 }
 
 /* .prose .anchor {
