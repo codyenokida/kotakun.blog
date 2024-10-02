@@ -10,6 +10,7 @@ import {
   deleteDoc,
   getDoc,
 } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
 
 import { db } from "./firebase";
 
@@ -20,7 +21,13 @@ import { db } from "./firebase";
  * @param {string} author
  * @param {string} content
  */
-export async function postComment(id: string, author: string, content: string) {
+export async function postComment(
+  id: string,
+  author: string,
+  content: string,
+  parentId: string = "",
+  email?: string
+) {
   if (!author) {
     throw "Comment needs an Author.";
   }
@@ -30,18 +37,24 @@ export async function postComment(id: string, author: string, content: string) {
   if (!id) {
     throw "Error: No post id";
   }
-  const postRef = doc(db, "comments", id);
+
+  // Relevant information needed
   const datePosted = new Date();
+  const commentId = uuidv4();
 
   // Check if the document exists
+  const postRef = doc(db, "comments", id);
   const docSnap = await getDoc(postRef);
 
   if (docSnap.exists()) {
     // If the document exists, update it
     await updateDoc(postRef, {
       comments: arrayUnion({
+        commentId,
+        parentId,
         author,
         content,
+        email,
         datePosted,
       }),
     });
@@ -50,8 +63,11 @@ export async function postComment(id: string, author: string, content: string) {
     await setDoc(postRef, {
       comments: [
         {
+          commentId,
+          parentId,
           author,
           content,
+          email,
           datePosted,
         },
       ],

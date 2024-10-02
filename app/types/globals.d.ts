@@ -38,14 +38,22 @@ declare global {
   };
 
   type BlogComment = {
+    commentId: string;
+    parentId?: string;
+    parentAuthor?: string;
     author: string;
     content: string;
+    email?: string;
     datePosted: Date;
+    replies: BlogComment[];
   };
 
   type BlogCommentFromFirestore = {
+    commentId: string;
+    parentId?: string;
     author: string;
     content: string;
+    email?: string;
     datePosted: FirebaseFirestoreTypes.Timestamp;
   };
 

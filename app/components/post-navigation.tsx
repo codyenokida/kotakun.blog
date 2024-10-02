@@ -37,7 +37,7 @@ export function PostNavigation({ currentSlug }: PostNavigationProps) {
   const nextPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
 
   return (
-    <div className="flex flex-col gap-4 md:flex-row justify-between mt-8">
+    <div className="flex flex-col gap-4 md:flex-row justify-between mt-4">
       <PostLink direction="prev" post={prevPost} label="Prev" />
       <PostLink direction="next" post={nextPost} label="Next" />
     </div>

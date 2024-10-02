@@ -116,6 +116,8 @@ export default function Blog({ params }: { params: { slug: string } }) {
       </article>
       <Divider />
       <Comments slug={params.slug} />
+      <Divider />
+      <h2 className="text-2xl font-semibold">Interested in reading more?</h2>
       <PostNavigation currentSlug={params.slug} />
     </section>
   );

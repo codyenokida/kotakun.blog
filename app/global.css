@@ -26,6 +26,7 @@
   --color-off-white: rgba(79, 143, 73, 0.02);
   --color-gray: rgba(113, 113, 113);
   --color-red: rgba(255, 60, 60);
+  --color-blue: rgba(70, 130, 255);
 }
 
 /* @media (prefers-color-scheme: dark) {

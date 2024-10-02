@@ -22,6 +22,7 @@ module.exports = {
         "off-white": "var(--color-off-white)",
         gray: "var(--color-gray)",
         red: "var(--color-red)",
+        blue: "var(--color-blue)",
       },
     },
   },
