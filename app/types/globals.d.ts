@@ -44,7 +44,7 @@ declare global {
     author: string;
     content: string;
     email?: string;
-    datePosted: Date;
+    timestamp: Date;
     replies: BlogComment[];
   };
 
@@ -54,7 +54,7 @@ declare global {
     author: string;
     content: string;
     email?: string;
-    datePosted: FirebaseFirestoreTypes.Timestamp;
+    timestamp: FirebaseFirestoreTypes.Timestamp;
   };
 
   type Project = {

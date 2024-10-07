@@ -5,20 +5,21 @@ import { doc, onSnapshot } from "firebase/firestore";
 
 import { postComment } from "@/app/lib/firebase/firestore";
 import { db } from "@/app/lib/firebase/firebase";
+import { migrateCommentsToNewStructure } from "@/app/lib/firebase/firestore";
 
 import LoadingCommentSkeleton from "@/app/components/comments-loading-skeleton";
 
 const organizeComments = (
   newComments: BlogCommentFromFirestore[]
 ): BlogComment[] => {
-  // 2. Formats the comment to match the type
+  // 1. Formats the comment to match the type
   const formattedComments: BlogComment[] = newComments.map((comment) => ({
     ...comment,
-    datePosted: comment.datePosted.toDate() as Date,
+    timestamp: comment.timestamp.toDate(),
     replies: [],
   }));
 
-  // 3. Organize comments into a hierarchical structure
+  // 2. Organize comments into a hierarchical structure
   const organizedComments: BlogComment[] = [];
   const commentMap: { [key: string]: BlogComment } = {};
 
@@ -26,7 +27,7 @@ const organizeComments = (
   formattedComments.forEach((comment) => {
     const commentId =
       comment.commentId ||
-      comment.author + comment.datePosted.valueOf().toString();
+      comment.author + comment.timestamp.valueOf().toString();
     commentMap[commentId] = { ...comment, commentId, replies: [] };
   });
 
@@ -42,7 +43,7 @@ const organizeComments = (
       // This is a top-level comment
       const commentId =
         comment.commentId ||
-        comment.author + comment.datePosted.valueOf().toString();
+        comment.author + comment.timestamp.valueOf().toString();
       organizedComments.push(commentMap[commentId]);
     }
   });
@@ -64,9 +65,10 @@ export default function Comments({ slug }: { slug: string }) {
   useEffect(() => {
     if (slug) {
       setIsLoading(true);
-      const unsub = onSnapshot(doc(db, "comments", slug), (doc) => {
+      const unsub = onSnapshot(doc(db, "new-comments", slug), (doc) => {
+        const data = doc.data() as { [key: string]: BlogCommentFromFirestore };
         const newComments: BlogCommentFromFirestore[] =
-          doc.data()?.comments || [];
+          Object.values(data) || [];
 
         setComments(organizeComments(newComments));
         setIsLoading(false);
@@ -95,11 +97,10 @@ export default function Comments({ slug }: { slug: string }) {
 
     try {
       if (slug && author && content) {
-        const finalContent = content.toString();
         await postComment(
           slug,
           author.toString(),
-          finalContent,
+          content.toString(),
           replyTo?.commentId,
           email?.toString()
         );
@@ -112,6 +113,25 @@ export default function Comments({ slug }: { slug: string }) {
           localStorage.removeItem("email");
         }
         setReplyTo(null);
+        if (replyTo) {
+          const response = await fetch("/api/comments", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              slug,
+              author: author.toString(),
+              content: content.toString(),
+              parentId: replyTo?.commentId,
+              email: email?.toString(),
+            }),
+          });
+
+          if (!response.ok) {
+            throw new Error("Failed to post comment");
+          }
+        }
       }
     } catch (e) {
       console.error(e);
@@ -131,9 +151,9 @@ export default function Comments({ slug }: { slug: string }) {
       replies.length > 0 && (
         <div className="ml-4">
           {replies.map((reply, j) => {
-            const formattedReplyDate = reply.datePosted.toLocaleDateString();
+            const formattedReplyDate = reply.timestamp.toLocaleDateString();
             return (
-              <div key={`${reply.author} ${reply.datePosted} ${j}`}>
+              <div key={`${reply.author} ${reply.timestamp} ${j}`}>
                 <article className="py-1">
                   <h4 className="font-semibold text-xl">
                     {reply.author} <span className="text-green">•</span>{" "}
@@ -170,9 +190,9 @@ export default function Comments({ slug }: { slug: string }) {
     return (
       <div>
         {comments.map((comment, i) => {
-          const formattedDatePosted = comment.datePosted.toLocaleDateString();
+          const formattedDatePosted = comment.timestamp.toLocaleDateString();
           return (
-            <div key={`${comment.author} ${comment.datePosted} ${i}`}>
+            <div key={`${comment.author} ${comment.timestamp} ${i}`}>
               <article className="py-2">
                 <h4 className="font-semibold text-xl">
                   {comment.author} <span className="text-green">•</span>{" "}
