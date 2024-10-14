@@ -8,9 +8,6 @@ export async function POST(request: Request) {
   const { slug, author, content, parentId, email } = await request.json();
 
   try {
-    // Post the comment
-    await postComment(slug, author, content, parentId, email);
-
     // If this is a reply, send an email notification
     if (parentId) {
       const comments = await getComments(slug);

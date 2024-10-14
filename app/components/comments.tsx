@@ -9,6 +9,32 @@ import { migrateCommentsToNewStructure } from "@/app/lib/firebase/firestore";
 
 import LoadingCommentSkeleton from "@/app/components/comments-loading-skeleton";
 
+const sendReplyNotification = async (
+  slug: string,
+  author: string,
+  content: string,
+  parentId: string,
+  email: string
+) => {
+  const response = await fetch("/api/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      slug,
+      author,
+      content,
+      parentId,
+      email,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to send reply notification");
+  }
+};
+
 const organizeComments = (
   newComments: BlogCommentFromFirestore[]
 ): BlogComment[] => {
@@ -48,13 +74,18 @@ const organizeComments = (
     }
   });
 
+  // Sort organizedComments by timestamp (earliest to latest)
+  organizedComments.sort(
+    (a, b) => a.timestamp.getTime() - b.timestamp.getTime()
+  );
+
   return organizedComments;
 };
 
 export default function Comments({ slug }: { slug: string }) {
   const [comments, setComments] = useState<BlogComment[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [author, setAuthor] = useState<string>("");
   const [content, setContent] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -95,6 +126,8 @@ export default function Comments({ slug }: { slug: string }) {
     const content = formData.get("content");
     const email = formData.get("email");
 
+    setIsSubmitting(true);
+
     try {
       if (slug && author && content) {
         await postComment(
@@ -114,27 +147,19 @@ export default function Comments({ slug }: { slug: string }) {
         }
         setReplyTo(null);
         if (replyTo) {
-          const response = await fetch("/api/comments", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              slug,
-              author: author.toString(),
-              content: content.toString(),
-              parentId: replyTo?.commentId,
-              email: email?.toString(),
-            }),
-          });
-
-          if (!response.ok) {
-            throw new Error("Failed to post comment");
-          }
+          await sendReplyNotification(
+            slug,
+            author.toString(),
+            content.toString(),
+            replyTo.commentId,
+            email?.toString() || ""
+          );
         }
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -321,6 +346,7 @@ export default function Comments({ slug }: { slug: string }) {
         <div className="flex justify-start">
           <button
             type="submit"
+            disabled={isSubmitting}
             className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out font-patrick-hand-sc transform hover:scale-105 hover:rotate-1"
           >
             Post Comment
