@@ -39,6 +39,7 @@ const organizeComments = (
   newComments: BlogCommentFromFirestore[]
 ): BlogComment[] => {
   // 1. Formats the comment to match the type
+  console.log("newComments", newComments);
   const formattedComments: BlogComment[] = newComments.map((comment) => ({
     ...comment,
     timestamp: comment.timestamp.toDate(),
