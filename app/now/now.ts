@@ -1,13 +1,22 @@
 export const BASED_LOCATION = "california";
 
-export const CURRENT_LOCATION = "tokyo, jp 🇯🇵";
-export const LAT = 35.6895;
-export const LON = 139.6917;
+export const CURRENT_LOCATION = "orange county, ca";
+export const LAT = 33.6846;
+export const LON = -117.8265;
 
 export const NOW_DATA = [
   {
-    date: "2024, AUG",
+    date: "2024, OCT 18",
     location: CURRENT_LOCATION,
+    currently:
+      "Back in California! I came back to San Francisco a week ago. I spent some time visiting my old housemates and colleagues. Back to life! I'm taking my time as I work on freelancing gigs to hopefully find something permamant in the near future. Excited for what's to come and would love to keep appreciating each day as it comes!",
+    dayJob: "Squatter, housecleaning, and freelancing",
+    interests: ["Coding", "Running", "Movies"],
+    lastUpdated: "10/18/2024",
+  },
+  {
+    date: "2024, AUG",
+    location: "Tokyo, JP 🇯🇵",
     currently:
       "I'm currently updating this portion of the blog from Tokyo, Japan!!! I'm back in my home country where my parents grew up, showing Ashley around the city. Japan is currently experiencing Typhoon 10. It's an extremely strong typhoon, but we're staying safe and dry. It's been a fun trip so far and I'm glad we're spending time in a place I'm comfortable with. // I've done a lot of reflecting on my life recently. Some moments have been filled with doubts about myself and how I want to move forward in life. I want to settle down and commit to a long-term stay where I can grow a community and work hard to find some fulfillment in my work and craft. It's a bad addiction to keep thinking about the future and how I want to live, so I'm currently taking it day by day to enjoy my time here. That includes shopping, movies, and improving this blog and other things to be ready for what's to come. So grateful for everything that's transpired over the past few months and I'm excited for what's to come.\n\nAnyways, watched the Greatest Showman and it was such a great movie with so many layers. Looking to take some time and watch a good movie, documentary, or listen to some good music all month.",
     dayJob: "Not Applicable",

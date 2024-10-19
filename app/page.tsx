@@ -71,11 +71,9 @@ export default function Page() {
             here.
           </p>
           <p>
-            i&apos;m based in{" "}
-            <span className="font-bold">{BASED_LOCATION}</span>, but i&apos;m
-            currently in <span className="font-bold">{CURRENT_LOCATION}</span>.
-            i update my <HyperLink href="/now">now</HyperLink> page every so
-            often!
+            i&apos;m currently based in{" "}
+            <span className="font-bold">{CURRENT_LOCATION}</span>. i update my{" "}
+            <HyperLink href="/now">now</HyperLink> page every so often!
           </p>
           <p>
             i do web dev for work. if you&apos;re interested in that side of me,
