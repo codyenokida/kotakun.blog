@@ -39,7 +39,6 @@ const organizeComments = (
   newComments: BlogCommentFromFirestore[]
 ): BlogComment[] => {
   // 1. Formats the comment to match the type
-  console.log("newComments", newComments);
   const formattedComments: BlogComment[] = newComments.map((comment) => ({
     ...comment,
     timestamp: comment.timestamp.toDate(),
@@ -100,7 +99,7 @@ export default function Comments({ slug }: { slug: string }) {
       const unsub = onSnapshot(doc(db, "new-comments", slug), (doc) => {
         const data = doc.data() as { [key: string]: BlogCommentFromFirestore };
         const newComments: BlogCommentFromFirestore[] =
-          Object.values(data) || [];
+          data ? Object.values(data) : [];
 
         setComments(organizeComments(newComments));
         setIsLoading(false);
