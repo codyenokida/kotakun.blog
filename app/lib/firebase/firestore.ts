@@ -65,7 +65,6 @@ export async function postComment(
   } else {
     // If the document doesn't exist, create it
     await setDoc(postRef, {
-      id,
       [`${commentId}`]: {
         commentId,
         parentId,
