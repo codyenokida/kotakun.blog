@@ -80,7 +80,8 @@ h3 {
 }
 
 a,
-p {
+p, 
+li {
   @apply text-neutral-800 text-base font-normal leading-6 tracking-wide;
 }
 
