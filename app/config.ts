@@ -10,6 +10,16 @@ export const RECOMMENDED_POSTS = [
 
 export const PROJECTS: Project[] = [
   {
+    name: "Cody's Chip Catalogue",
+    description:
+      "The internet's most comprehensive catalogue of chips. Designed, architected, and built by Cody (me).",
+    url: "https://www.codyschips.xyz/",
+    image: "/projects/codyschips-project.png",
+    thumbnail: "/projects/codyschips-project.png",
+    tags: ["Next.js", "Tailwind CSS", "PostgreSQL", "Figma", "Supabase"],
+    logo: "/projects/codyschips-logo.png",
+  },
+  {
     name: "C3.ai",
     description:
       "Enterprise AI software for digital transformation. I contributed to the UI framework, improving the design system, data visualization, and components library.",
