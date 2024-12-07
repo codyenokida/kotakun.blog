@@ -39,6 +39,7 @@ const AboutImages: React.FC<AboutImagesProps> = ({ imageUrls }) => {
               className="object-cover"
               placeholder="blur"
               blurDataURL={base64}
+              unoptimized={true}
             />
           </div>
         );
