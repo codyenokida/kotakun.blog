@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const path = require("path");
 const sharp = require("sharp");
 
-const inputDir = path.join(__dirname, "public", "posts");
+const inputDir = path.join(__dirname, "../public", "posts");
 const outputDir = path.join(__dirname, "public", "posts-compressed");
 
 async function compressImage(inputPath, outputPath) {
