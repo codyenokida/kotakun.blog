@@ -164,7 +164,7 @@ a.back-button:hover svg {
 
 .prose ol,
 .summary ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-6 my-4;
 }
 
 .prose > :first-child {
