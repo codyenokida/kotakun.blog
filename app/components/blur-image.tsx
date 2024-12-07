@@ -45,7 +45,7 @@ export default async function DynamicBlurImage({
       placeholder="blur"
       blurDataURL={base64}
       className={className}
-      unoptimized={unoptimized}
+      unoptimized={true}
     />
   );
 }
