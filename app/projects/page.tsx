@@ -5,15 +5,14 @@ import ProjectCard from "@/app/components/project-card";
 import BackButton from "@/app/components/back-button";
 import Divider from "../components/divider";
 import Hyperlink from "../components/hyperlink";
+import VideoToAscii from "../components/video-to-ascii";
 
 export default function Page() {
   return (
     <section>
       <BackButton />
-      <h1 className="title font-semibold text-4xl tracking-tighter">
-        my foot print on the internet
-      </h1>
-      <div className="flex flex-col gap-4">
+      <VideoToAscii src="/chopper.mp4" />
+      <div className="flex flex-col gap-4 mt-6">
         <p>
           I&apos;m{" "}
           <Hyperlink href="/about">
