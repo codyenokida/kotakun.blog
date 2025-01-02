@@ -1,7 +1,6 @@
-
 "use client"
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 interface ASCIIVideoConverterProps {
     src: string;
@@ -18,7 +17,7 @@ const ASCIIVideoConverter: React.FC<ASCIIVideoConverterProps> = ({ src }) => {
         '@', '#', '8', '&', 'o', ':', '*', '.', ' '
     ];
 
-    const prefillCanvas = (canvas: HTMLCanvasElement) => {
+    const prefillCanvas = useCallback((canvas: HTMLCanvasElement) => {
         const ctx = canvas.getContext('2d');
         if (!ctx) {
             setError('Failed to get canvas context');
@@ -41,9 +40,9 @@ const ASCIIVideoConverter: React.FC<ASCIIVideoConverterProps> = ({ src }) => {
                 ctx.fillText(char, x, y);
             }
         }
-    };
+    }, [ASCII_CHARS, setError]);
 
-    const processFrame = () => {
+    const processFrame = useCallback(() => {
         const video = videoRef.current;
         const canvas = canvasRef.current;
         if (!video || !canvas) return;
@@ -122,7 +121,7 @@ const ASCIIVideoConverter: React.FC<ASCIIVideoConverterProps> = ({ src }) => {
                 );
             }
         }
-    };
+    }, [ASCII_CHARS, setError]);
 
     useEffect(() => {
         const video = videoRef.current;
@@ -150,7 +149,6 @@ const ASCIIVideoConverter: React.FC<ASCIIVideoConverterProps> = ({ src }) => {
         video.addEventListener('loadedmetadata', handleLoadedMetadata);
         video.addEventListener('timeupdate', handleTimeUpdate);
 
-        // Start playing the video automatically
         video.play();
 
         // Cleanup
@@ -158,7 +156,7 @@ const ASCIIVideoConverter: React.FC<ASCIIVideoConverterProps> = ({ src }) => {
             video.removeEventListener('loadedmetadata', handleLoadedMetadata);
             video.removeEventListener('timeupdate', handleTimeUpdate);
         };
-    }, [src, videoRef.current]);
+    }, [src, prefillCanvas, processFrame]);
 
     const togglePlay = () => {
         const video = videoRef.current;
