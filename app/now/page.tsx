@@ -22,7 +22,7 @@ export default function Page() {
   const nowData = NOW_DATA[0];
 
   return (
-    <section>
+    <section className="max-w-xl mx-auto">
       <BackButton />
       <h1 className="title font-semibold text-4xl tracking-tighter">
         what i&apos;m up to now

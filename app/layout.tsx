@@ -52,12 +52,14 @@ const inriaSans = Inria_Sans({
   weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-inria-sans",
+  display: "swap",
 });
 
 const patrickHandsSC = Patrick_Hand_SC({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-patrick-hand-sc",
+  display: "swap",
 });
 
 const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
@@ -78,7 +80,7 @@ export default function RootLayout({
         inriaSans.variable
       )}
     >
-      <body className="antialiased max-w-xl mt-6 mx-auto">
+      <body className="antialiased mt-6 mx-auto">
         <main className="flex-auto min-w-0 flex flex-col px-6 md:px-0">
           {children}
           <Footer />

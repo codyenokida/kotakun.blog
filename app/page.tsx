@@ -46,7 +46,7 @@ const SmileSVG = () => {
 
 export default function Page() {
   return (
-    <>
+    <div className="max-w-xl mx-auto">
       <div className="flex items-center justify-center w-[84px] h-[84px] mx-auto">
         <Image
           src="/logos/logo.gif"
@@ -114,6 +114,6 @@ export default function Page() {
         <h2>everything else i&apos;ve written so far</h2>
         <BlogPosts />
       </section>
-    </>
+    </div>
   );
 }

@@ -260,7 +260,7 @@ const SignatureSVG = () => {
 
 export default function Page() {
   return (
-    <section>
+    <section className="max-w-xl mx-auto">
       <BackButton />
       <h1 className="title font-semibold text-4xl tracking-tighter">
         a little about me
