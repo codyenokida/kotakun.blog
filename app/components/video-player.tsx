@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 interface VideoPlayerProps {
   src: string;
@@ -21,46 +21,53 @@ const VideoPlayer = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
 
-  useEffect(() => {
+  const updateCanvas = useCallback(() => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
-    if (!video || !canvas) return;
+    const ctx = canvas?.getContext('2d');
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!video || !canvas || !ctx || video.paused || video.ended) return;
 
-    const updateCanvas = () => {
-      if (video.paused || video.ended) return;
+    // Set canvas dimensions to match video
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
 
-      // Set canvas dimensions to match video
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
+    // Draw current video frame
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-      // Draw current video frame
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // Request next frame
+    animationRef.current = requestAnimationFrame(updateCanvas);
+  }, []);
 
-      // Request next frame
-      animationRef.current = requestAnimationFrame(updateCanvas);
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handlePlay = () => {
+      updateCanvas();
     };
 
-    video.play();
-
-    video.addEventListener('play', () => {
-      updateCanvas();
-    });
-
-    video.addEventListener('pause', () => {
+    const handlePause = () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-    });
+    };
+
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+
+    if (autoplay) {
+      video.play();
+    }
 
     return () => {
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [videoRef]);
+  }, [autoplay, updateCanvas]);
 
   return (
     <figure className="my-8">
