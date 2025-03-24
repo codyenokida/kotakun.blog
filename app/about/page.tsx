@@ -282,7 +282,7 @@ export default function Page() {
           .
         </p>
         <p>
-          i&apos;m 24 years old and i live in {BASED_LOCATION}. i was raised in
+          i&apos;m 25 years old and i live in {BASED_LOCATION}. i was raised in
           a multicultural household, growing up both in beautiful southern
           california and in the bustling city of tokyo during the summers.
         </p>

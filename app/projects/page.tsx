@@ -443,7 +443,8 @@ export default function Page() {
   return (
     <section className="mx-auto flex flex-col items-center justify-center">
       <div className="flex flex-col gap-4 mt-6 max-w-xl">
-        <p>Hi! I&apos;m <strong>Kota</strong>, a frontend engineer based in California.</p>
+        <p>Hi! I&apos;m <strong>Kota</strong>, a frontend engineer based in New York City.</p>
+        <p>I currently work at <HyperLink href="https://nominal.io">Nominal</HyperLink> as a frontend software engineer.</p>
         <p>Here, I share my craft, unfinished or imperfect projects, and the many other things I&apos;m exploring.</p>
         <p>Throughout the past few years, I&apos;ve worked with big corporations and startups, building well designed, fast, and delightful user experiences.</p>
         <p>I&apos;ve been exploring new ways to build software on the web. I&apos;m always learning and trying new things.</p>

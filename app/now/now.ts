@@ -1,13 +1,21 @@
-export const BASED_LOCATION = "california";
+export const BASED_LOCATION = "new york city";
 
-export const CURRENT_LOCATION = "orange county, ca";
+export const CURRENT_LOCATION = "new york city, ny 🐀";
 export const LAT = 33.6846;
 export const LON = -117.8265;
 
 export const NOW_DATA = [
   {
-    date: "2024, OCT 18",
+    date: "2025, MAR 24",
     location: CURRENT_LOCATION,
+    currently: "WOWWW!! I'm in New York City. Lol it's a trip to be here. I'm still soaking in all the hustle and bustle, but i think i'm going to enjoy it here. i'm here with great company, and will be busy spending my time with exploring and work. I never thought I'd be here, but i conciously chose new york, because why not. Overall, as I juggle my job, relationships, and new city life, I'm excited to try to be better at some skill and have fun while I'm here. I'm not your typical 25 year old <,< trying to drink and go to bars LOL. Yes i'm so different and special!!!",
+    dayJob: "Software Engineer at Nominal",
+    interests: ["Not sure ATM"],
+    lastUpdated: "3/24/2025",
+  },
+  {
+    date: "2024, OCT 18",
+    location: "orange county, ca 🇺🇸",
     currently:
       "Back in California! I came back to San Francisco a week ago. I spent some time visiting my old housemates and colleagues. Back to life! I'm taking my time as I work on freelancing gigs to hopefully find something permamant in the near future. Excited for what's to come and would love to keep appreciating each day as it comes!",
     dayJob: "Squatter, housecleaning, and freelancing",
