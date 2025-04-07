@@ -1,8 +1,8 @@
 export const BASED_LOCATION = "new york city";
 
 export const CURRENT_LOCATION = "new york city, ny 🐀";
-export const LAT = 33.6846;
-export const LON = -117.8265;
+export const LAT = 40.7736;
+export const LON = -73.9566;
 
 export const NOW_DATA = [
   {
