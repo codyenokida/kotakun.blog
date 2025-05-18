@@ -442,8 +442,8 @@ export default function Page() {
       <div className="flex flex-col gap-4 mt-6 max-w-xl">
         <p>Hi! I&apos;m <strong>Kota</strong>, a frontend engineer based in New York City.</p>
         <p>I currently work at <HyperLink href="https://nominal.io">Nominal</HyperLink> as a frontend software engineer.</p>
-        <p>I'd consider myself a craftsman in some sense - here's some of my work.</p>
-        <p>I&apos;m interested with helping people, the environment, and the well being of the world. Please reach out if you'd like to chat!</p>
+        <p>I&apos;d consider myself a craftsman in some sense - here&apos;s some of my work.</p>
+        <p>I&apos;m interested with helping people, the environment, and the well being of the world. Please reach out if you&apos;d like to chat!</p>
         <SignatureSVG />
         <p><HyperLink href="https://www.linkedin.com/in/codyenokida/">LinkedIn</HyperLink> / <HyperLink href="https://github.com/codyenokida">GitHub</HyperLink> / <HyperLink href="/">Blog</HyperLink></p>
         <Divider />

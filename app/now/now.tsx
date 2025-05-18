@@ -10,24 +10,24 @@ export const NOW_DATA = [
     location: CURRENT_LOCATION,
     currently:
       <>
-        I haven't been very good at updating this portion of the blog, but here I am now.
+        I haven&apos;t been very good at updating this portion of the blog, but here I am now.
         <br />
         <br />
-        It's Sat midnight, finished up a long day of visiting Astoria for my wood working class and house cleaning.
+        It&apos;s Sat midnight, finished up a long day of visiting Astoria for my wood working class and house cleaning.
         <br />
         <br />
-      2 months into New York, I'm doing great! Exploring, working, and living. Work has been pretty fulfilling overall 
-      and it's a great experience to work alongside some crazy talented and smart people. It's also fun to be able to 
+      2 months into New York, I&apos;m doing great! Exploring, working, and living. Work has been pretty fulfilling overall 
+      and it&apos;s a great experience to work alongside some crazy talented and smart people. It&apos;s also fun to be able to 
       work on a product you think is cool and I enjoy working on it and putting in the time and effort to grow it.
         <br />
       <br />
       Ashley and I have been getting more acclimated (more me than her though). Working 
-      everyday and having that routine helps a lot. I started going to a wood working studio which I've always wanted 
-      to do, and that's been fun. I'm planning to make a coffee table and trying to be ambitious and intentional with 
+      everyday and having that routine helps a lot. I started going to a wood working studio which I&apos;ve always wanted 
+      to do, and that&apos;s been fun. I&apos;m planning to make a coffee table and trying to be ambitious and intentional with 
       my design.
       <br />
       <br />
-      I'm super grateful to be here.
+      I&apos;m super grateful to be here.
       </>,
     dayJob: "Software Engineer at Nominal",
     interests: [

@@ -20,6 +20,7 @@ const VideoPlayer = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
+  const observerRef = useRef<IntersectionObserver>();
 
   const updateCanvas = useCallback(() => {
     const video = videoRef.current;
@@ -41,7 +42,8 @@ const VideoPlayer = ({
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    const canvas = canvasRef.current;
+    if (!video || !canvas) return;
 
     const handlePlay = () => {
       updateCanvas();
@@ -52,6 +54,23 @@ const VideoPlayer = ({
         cancelAnimationFrame(animationRef.current);
       }
     };
+
+    // Create intersection observer
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            video.pause();
+          } else if (autoplay) {
+            video.play();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Start observing the video element
+    observerRef.current.observe(canvas);
 
     video.addEventListener('play', handlePlay);
     video.addEventListener('pause', handlePause);
@@ -66,13 +85,16 @@ const VideoPlayer = ({
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
     };
   }, [autoplay, updateCanvas]);
 
   return (
     <figure className="my-8">
       <div
-        className={`${isVertical ? "max-w-[50%] mx-auto" : "w-full"
+        className={`${isVertical ? "max-w-[70%] mx-auto" : "w-full"
           } border-2 border-green-faded bg-green-faded rounded-md shadow-sm`}
       >
         <video
@@ -89,7 +111,7 @@ const VideoPlayer = ({
         </video>
         <canvas
           ref={canvasRef}
-          className="w-full rounded-md shadow-lg"
+          className={`${isVertical ? "min-h-[360px] w-full" : "w-full min-h-[211px]"} rounded-md shadow-lg mx-auto `}
         />
       </div>
       {caption && (
