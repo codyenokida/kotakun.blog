@@ -3,9 +3,9 @@ import { getLatestPostMetadata, getPostMetadataBySlug } from "./blog/utils";
 // top four posts to recommend to users
 export const RECOMMENDED_POSTS = [
   getLatestPostMetadata(),
-  getPostMetadataBySlug("taiwan-update"),
-  getPostMetadataBySlug("too-many-blogs"),
   getPostMetadataBySlug("vietnam-three"),
+  getPostMetadataBySlug("too-many-blogs"),
+  getPostMetadataBySlug("taiwan-update"),
 ];
 
 export const PROJECTS: Project[] = [

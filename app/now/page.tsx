@@ -41,18 +41,12 @@ export default function Page() {
         <NowMap lat={LAT} lon={LON} />
         <h2 className="mt-8">{nowData.date}</h2>
         <p>
-          <b>Location:</b> {nowData.location}
+        {nowData.currently}
         </p>
         <p>
-          <b>Currently:</b> {nowData.currently}
+        📍 {nowData.location}
         </p>
-        <p>
-          <b>Day Job:</b> {nowData.dayJob}
-        </p>
-        <p>
-          <b>Interests:</b> {nowData.interests.join(", ")}
-        </p>
-        <p>
+        <p className="italic">
           <b>Last updated:</b> {nowData.lastUpdated}
         </p>
       </div>

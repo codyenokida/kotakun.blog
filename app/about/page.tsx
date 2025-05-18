@@ -282,7 +282,7 @@ export default function Page() {
           .
         </p>
         <p>
-          i&apos;m 25 years old and i live in {BASED_LOCATION}. i was raised in
+          i&apos;m 25 years old and i currently live in {BASED_LOCATION}. i was raised in
           a multicultural household, growing up both in beautiful southern
           california and in the bustling city of tokyo during the summers.
         </p>
@@ -296,26 +296,23 @@ export default function Page() {
           </li>
         </ul>
         <p>
-          i value empathy, open-mindedness, and light-heartedness. i enjoy
-          talking to people, but equally enjoy being by myself, entertained by
-          my own thoughts.
+          i value empathy, open-mindedness, and light-heartedness. i generally 
+          consider myself as an introvert, but i enjoy talking to people with a lot of passion
+          and curiosity towards the world.
         </p>
         <p>
           i currently work as a{" "}
-          <HyperLink href="/projects">web engineer</HyperLink>. i enjoy the
-          openness of the internet and i&apos;m spending my time to make it more
-          accessible and enjoyable to use for everyone.
+          <HyperLink href="/projects">web engineer</HyperLink>. i enjoy solving
+          problems and i also enjoy moving pixels around.
         </p>
         <p>
-          at the end of the day, much like my childhood days spent with legos
-          and minecraft, i derive the greatest joy from creating things and
-          sharing it with others.
+          i love creating things, learning about the world, 
+          and sharing experiences with friends and loved ones.
         </p>
         <p>
-          thank you for being here when there&apos;s so much to do in this busy
-          world;
+          big ups to you reading this.
         </p>
-        <p>warm regards,</p>
+        <p className="pb-2">sending good vibes,</p>
         <SignatureSVG />
       </div>
     </section>

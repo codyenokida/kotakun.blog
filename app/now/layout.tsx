@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <div className="flex items-center justify-center w-[84px] h-[84px] mx-auto">
         <Image
-          src="/logos/logo-now.gif"
+          src="/logos/logo.gif"
           width={84}
           height={84}
           alt="logo emoji"

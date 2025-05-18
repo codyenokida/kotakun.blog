@@ -64,11 +64,10 @@ export default function Page() {
             <strong className="text-green leading-4">kotakun.blog</strong>
           </h1>
           <p>
-            hey, i&apos;m{" "}
-            <HyperLink href="/about">kota (cody) enokida</HyperLink>. this is a
-            blog where i ramble about the many thoughts that go through my
-            brain. discourse, an open mind, and a bit of stupidity is embraced
-            here.
+            hello, i&apos;m{" "}
+            <HyperLink href="/about">kota</HyperLink>! this is my little corner
+            of the internet where I share my thoughts and experiences.
+            come with an open mind and understanding that my thoughts are mostly pretty dumb.
           </p>
           <p>
             i&apos;m currently based in{" "}
@@ -76,15 +75,9 @@ export default function Page() {
             <HyperLink href="/now">now</HyperLink> page every so often!
           </p>
           <p>
-            i do web dev for work. if you&apos;re interested in that side of me,
-            here&apos;s{" "}
-            <HyperLink href="/projects">all the stuff i&apos;ve made</HyperLink>
-            .
-          </p>
-          <p>
-            welcome, and thank you for visiting my corner of the{" "}
+            welcome to the blog, make yourself at {" "}
             <span className="relative">
-              internet!
+            home!
               <i className="absolute right-[-16px] top-0">
                 <SmileSVG />
               </i>

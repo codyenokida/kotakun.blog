@@ -1,8 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { PROJECTS } from "@/app/config";
-import ProjectCard from "@/app/components/project-card";
-import BackButton from "@/app/components/back-button";
 import Divider from "../components/divider";
 import Link from "next/link";
 import HyperLink from "../components/hyperlink";
@@ -445,16 +442,13 @@ export default function Page() {
       <div className="flex flex-col gap-4 mt-6 max-w-xl">
         <p>Hi! I&apos;m <strong>Kota</strong>, a frontend engineer based in New York City.</p>
         <p>I currently work at <HyperLink href="https://nominal.io">Nominal</HyperLink> as a frontend software engineer.</p>
-        <p>Here, I share my craft, unfinished or imperfect projects, and the many other things I&apos;m exploring.</p>
-        <p>Throughout the past few years, I&apos;ve worked with big corporations and startups, building well designed, fast, and delightful user experiences.</p>
-        <p>I&apos;ve been exploring new ways to build software on the web. I&apos;m always learning and trying new things.</p>
-        <p>When I&apos;m not building, I like blogging about my life, looking out to the ocean, and running in the streets of California.</p>
-        <p>I&apos;m interested with helping people, the environment, and the well being of the world. If you&apos;re interested in working with me, please reach out!</p>
+        <p>I'd consider myself a craftsman in some sense - here's some of my work.</p>
+        <p>I&apos;m interested with helping people, the environment, and the well being of the world. Please reach out if you'd like to chat!</p>
         <SignatureSVG />
         <p><HyperLink href="https://www.linkedin.com/in/codyenokida/">LinkedIn</HyperLink> / <HyperLink href="https://github.com/codyenokida">GitHub</HyperLink> / <HyperLink href="/">Blog</HyperLink></p>
         <Divider />
         <h2 className="mx-auto mb-2 text-center">~ notable contributions on the <i>INTERNET</i> ~</h2>
-        <Divider />
+        <div className="w-full h-16"/>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-3xl lg:max-w-4xl">
         <C3AI_PROJECT />

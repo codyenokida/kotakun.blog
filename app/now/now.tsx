@@ -1,13 +1,45 @@
 export const BASED_LOCATION = "new york city";
 
-export const CURRENT_LOCATION = "new york city, ny 🐀";
+export const CURRENT_LOCATION = "new york city";
 export const LAT = 40.7736;
 export const LON = -73.9566;
 
 export const NOW_DATA = [
   {
-    date: "2025, MAR 24",
+    date: "2025, MAY 18",
     location: CURRENT_LOCATION,
+    currently:
+      <>
+        I haven't been very good at updating this portion of the blog, but here I am now.
+        <br />
+        <br />
+        It's Sat midnight, finished up a long day of visiting Astoria for my wood working class and house cleaning.
+        <br />
+        <br />
+      2 months into New York, I'm doing great! Exploring, working, and living. Work has been pretty fulfilling overall 
+      and it's a great experience to work alongside some crazy talented and smart people. It's also fun to be able to 
+      work on a product you think is cool and I enjoy working on it and putting in the time and effort to grow it.
+        <br />
+      <br />
+      Ashley and I have been getting more acclimated (more me than her though). Working 
+      everyday and having that routine helps a lot. I started going to a wood working studio which I've always wanted 
+      to do, and that's been fun. I'm planning to make a coffee table and trying to be ambitious and intentional with 
+      my design.
+      <br />
+      <br />
+      I'm super grateful to be here.
+      </>,
+    dayJob: "Software Engineer at Nominal",
+    interests: [
+      "Wood Working",
+      "Coding", 
+      "Cleaning"
+    ],
+    lastUpdated: "5/18/2025",
+  },
+  {
+    date: "2025, MAR 24",
+    location: "new york city, ny 🐀",
     currently: "WOWWW!! I'm in New York City. Lol it's a trip to be here. I'm still soaking in all the hustle and bustle, but i think i'm going to enjoy it here. i'm here with great company, and will be busy spending my time with exploring and work. I never thought I'd be here, but i conciously chose new york, because why not. Overall, as I juggle my job, relationships, and new city life, I'm excited to try to be better at some skill and have fun while I'm here. I'm not your typical 25 year old <,< trying to drink and go to bars LOL. Yes i'm so different and special!!!",
     dayJob: "Software Engineer at Nominal",
     interests: ["Not sure ATM"],
