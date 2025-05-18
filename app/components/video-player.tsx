@@ -94,7 +94,7 @@ const VideoPlayer = ({
   return (
     <figure className="my-8">
       <div
-        className={`${isVertical ? "max-w-[70%] mx-auto" : "w-full"
+        className={`${isVertical ? "sm:max-w-[70%] md:max-w-[50%] mx-auto" : "w-full"
           } border-2 border-green-faded bg-green-faded rounded-md shadow-sm`}
       >
         <video
