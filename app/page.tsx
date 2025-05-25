@@ -64,18 +64,18 @@ export default function Page() {
             <strong className="text-green leading-4">kotakun.blog</strong>
           </h1>
           <p>
-            hello, i&apos;m{" "}
-            <HyperLink href="/about">kota</HyperLink>! this is my little corner
+            Hello, I&apos;m{" "}
+            <HyperLink href="/about">Kota</HyperLink>! This is my little corner
             of the internet where I share my thoughts and experiences.
             come with an open mind and understanding that my thoughts are mostly pretty dumb.
           </p>
           <p>
-            i&apos;m currently based in{" "}
-            <span className="font-bold">{CURRENT_LOCATION}</span>. i update my{" "}
+            I&apos;m currently based in{" "}
+            <span className="font-bold">{CURRENT_LOCATION}</span>. I update my{" "}
             <HyperLink href="/now">now</HyperLink> page every so often!
           </p>
           <p>
-            welcome to the blog, make yourself at {" "}
+            Welcome to the blog, make yourself at {" "}
             <span className="relative">
             home!
               <i className="absolute right-[-16px] top-0">

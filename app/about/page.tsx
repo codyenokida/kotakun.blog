@@ -274,20 +274,20 @@ export default function Page() {
           ]}
         />
         <p>
-          hey, i&apos;m <strong>kota enokida</strong>! my friends call me{" "}
-          <strong>cody</strong> or{" "}
+          Hey, I&apos;m <strong>Kota Enokida</strong>! my friends call me{" "}
+          <strong>Cody</strong> or{" "}
           <HyperLink href="https://en.wikipedia.org/wiki/Japanese_honorifics#:~:text=Kun%20(%E5%90%9B%E3%80%90%E3%81%8F%E3%82%93%E3%80%91)%20%2Fk%CA%8An%2F,teenagers%2C%20or%20among%20male%20friends.">
-            kota-kun (君)
+            Kota-kun (君)
           </HyperLink>
           .
         </p>
         <p>
-          i&apos;m 25 years old and i currently live in {BASED_LOCATION}. i was raised in
+          I&apos;m 25 years old and I currently live in {BASED_LOCATION}. I was raised in
           a multicultural household, growing up both in beautiful southern
-          california and in the bustling city of tokyo during the summers.
+          California and in the bustling city of Tokyo during the summers.
         </p>
         <p>
-          i have a hard time describing myself, so i&apos;ll leave you with what
+          I have a hard time describing myself, so I&apos;ll leave you with what
           people around me say about me:
         </p>
         <ul>
@@ -296,23 +296,22 @@ export default function Page() {
           </li>
         </ul>
         <p>
-          i value empathy, open-mindedness, and light-heartedness. i generally 
-          consider myself as an introvert, but i enjoy talking to people with a lot of passion
+          I value empathy, open-mindedness, and light-heartedness. I generally 
+          consider myself as an introvert, but I enjoy talking to people with a lot of passion
           and curiosity towards the world.
         </p>
         <p>
-          i currently work as a{" "}
-          <HyperLink href="/projects">web engineer</HyperLink>. i enjoy solving
-          problems and i also enjoy moving pixels around.
+          I currently work as a{" "}
+          <HyperLink href="/projects">web engineer</HyperLink>. I enjoy solving
+          problems and I also enjoy moving pixels around.
         </p>
         <p>
-          i love creating things, learning about the world, 
+          I love creating things, learning about the world, 
           and sharing experiences with friends and loved ones.
         </p>
         <p>
-          big ups to you reading this.
+          Big ups to you reading this. Thank you.
         </p>
-        <p className="pb-2">sending good vibes,</p>
         <SignatureSVG />
       </div>
     </section>
