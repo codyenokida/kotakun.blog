@@ -67,7 +67,7 @@ export default function Page() {
             Hello, I&apos;m{" "}
             <HyperLink href="/about">Kota</HyperLink>! This is my little corner
             of the internet where I share my thoughts and experiences.
-            come with an open mind and understanding that my thoughts are mostly pretty dumb.
+            Come with an open mind and understanding that my thoughts are mostly pretty dumb.
           </p>
           <p>
             I&apos;m currently based in{" "}
