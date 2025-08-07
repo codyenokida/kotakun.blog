@@ -6,6 +6,34 @@ export const LON = -73.9566;
 
 export const NOW_DATA = [
   {
+    date: "2025, AUG 7",
+    location: CURRENT_LOCATION,
+    currently:
+      <>
+        Soooooo, oops, it's been 2 months since i've updated this portion. Ngl work has been crazy busy. Start up life is no joke!!! 
+        <br />
+        <br />
+        Overall, things have been okay! (actively trying to go from okay to good to great) I've learned a ton from the job, what I'm good at - what I'm not good at. 
+        However, I do spend most of my subway rides back home thinking about what I don't like about my current life here. lol (not in a bad way). 
+        I have great times during the weekend both alone, with friends, and with Ashley.
+        I don't take for granted the fact that I do live here. It's a unique experience to be living somewhere with so much diversity and big dream mindset.
+        <br />
+        <br />
+        Quite frankly, it's been a challenge juggling the job, a relationship, and a new city. It's probably the biggest challenge I'll be facing this year. I'm woefully optimisitic that I'll figure things out. 
+        <br />
+        <br />
+        I often think about the mortality of everything, which gives me a weird sense of comfort that I can just continue at my own pace.
+        <br />
+        <br />
+        Btw this all sounds really negative, but I'm actually doing okay -_-/ life is good, i'll keep writing more updates!
+      </>,
+    dayJob: "Software Engineer at Nominal",
+    interests: [
+      "vibing"
+    ],
+    lastUpdated: "8/7/2025",
+  },
+  {
     date: "2025, MAY 18",
     location: CURRENT_LOCATION,
     currently:
